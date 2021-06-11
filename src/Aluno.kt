@@ -1,7 +1,7 @@
 open class Aluno(
    val nome: String,
      val sobrenome: String,
-    val codAluno: Int
+    val codAluno: Int = -1
 ) {
 
 
@@ -22,4 +22,8 @@ open class Aluno(
         return "O nome do aluno é : $nome $sobrenome e o código é $codAluno"
     }
 
-}
+
+
+
+
+    }

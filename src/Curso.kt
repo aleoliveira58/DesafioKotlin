@@ -1,12 +1,12 @@
 class Curso(
     val nome: String,
-    val codCurso: Int,
+    val codCurso: Int = -1,
     val qtMaximaAlunos: Int,
 
 ) {
     lateinit var profTitular: ProfessorTitular
     lateinit var  profAdjunto: ProfessorAdjunto
-    lateinit var listaAlunosMatriculado: MutableList<Aluno>
+    var listaAlunosMatriculado = mutableListOf<Aluno>()
 
 
 
@@ -30,7 +30,7 @@ class Curso(
         return "O nome do curso é: $nome é o  código: $codCurso)"
     }
 
-    fun adicionarUmAluno(umAluno: Aluno): Boolean {
+    fun adicionarUmAluno(umAluno: Aluno?): Boolean {
         return (listaAlunosMatriculado.size <= qtMaximaAlunos &&
                 !listaAlunosMatriculado.contains(umAluno))
 
