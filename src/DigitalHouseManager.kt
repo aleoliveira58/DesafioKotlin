@@ -37,9 +37,7 @@ class DigitalHouseManager() {
         }
 
 
-        }
-       
-
+    }
 
 
     fun registrarProfessorTitular(nome: String, sobrenome: String, codigoProfessor: Int, especialidade: String) {
@@ -50,7 +48,6 @@ class DigitalHouseManager() {
             println("Já existe um professor registrado com o código '$codigoProfessor'.")
         }
     }
-
 
 
     fun excluirProfessor(codProfessor: Int) {
@@ -77,37 +74,77 @@ class DigitalHouseManager() {
     }
 
 
-        fun matricularAluno(codAluno: Int, codCurso: Int) {
+    fun matricularAluno(codAluno: Int, codCurso: Int) {
 
-            val aluno: Aluno? = listaAlunos.find { aluno1: Aluno -> aluno1.codAluno == codAluno }
+        val aluno: Aluno? = listaAlunos.find { aluno1: Aluno -> aluno1.codAluno == codAluno }
 
-            val curso: Curso? = listaCurso.find { curso1: Curso -> curso1.codCurso == codCurso }
-            if (curso?.adicionarUmAluno(aluno) as Boolean) {
-                val matricula = Matricula(aluno, curso)
-                listaMatriculas.add(matricula)
-                println("Matricula realizada as ${matricula.date} com sucesso")
+        val curso: Curso? = listaCurso.find { curso1: Curso -> curso1.codCurso == codCurso }
+        if (curso?.adicionarUmAluno(aluno) as Boolean) {
+            val matricula = Matricula(aluno, curso)
+            listaMatriculas.add(matricula)
+            println("Matricula realizada as ${matricula.date} com sucesso")
 
-            } else {
-                println("Matricula não realizada , vagas insuficientes")
-            }
-
-
+        } else {
+            println("Matricula não realizada , vagas insuficientes")
         }
 
 
-
-        fun alocarProfessores(codCurso: Int, codProfessorTitular: Int, codProfessorAdjunto: Int) {
-            val professorTitular: Professor? =
-                listaProf.find { profTitular1: Professor -> profTitular1.codProfessor == codProfessorTitular }
-            val professorAdjunto: Professor? =
-                listaProf.find { professorAdjunto1: Professor -> professorAdjunto1.codProfessor == codProfessorAdjunto }
-            val curso: Curso? = listaCurso.find { curso1: Curso -> curso1.codCurso == codCurso }
-            curso?.profTitular = professorTitular as ProfessorTitular
-            curso?.profAdjunto = professorAdjunto as ProfessorAdjunto
-
-
-        }
     }
+
+
+    fun alocarProfessores(codCurso: Int, codProfessorTitular: Int, codProfessorAdjunto: Int) {
+        val professorTitular: Professor? =
+            listaProf.find { profTitular1: Professor -> profTitular1.codProfessor == codProfessorTitular }
+        val professorAdjunto: Professor? =
+            listaProf.find { professorAdjunto1: Professor -> professorAdjunto1.codProfessor == codProfessorAdjunto }
+        val curso: Curso? = listaCurso.find { curso1: Curso -> curso1.codCurso == codCurso }
+        curso?.profTitular = professorTitular as ProfessorTitular
+        curso?.profAdjunto = professorAdjunto as ProfessorAdjunto
+
+
+    }
+
+
+    fun consultarMatricula(codigoAluno: Int ,adm: DigitalHouseManager) {
+        val matricula: Matricula? = adm.listaMatriculas.find { it.aluno?.codAluno == codigoAluno }
+        val curso: Curso? = listaCurso.find { curso1: Curso -> curso1.codCurso != codigoAluno }
+        if (matricula == null) {
+            println("Você está matriculado no curso $curso")
+        } else {
+            println("Você não esta se matriculando em nenhum curso")
+        }
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

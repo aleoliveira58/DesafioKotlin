@@ -1,8 +1,4 @@
 fun main(){
-
-
-
-
     val digitalHouseManager = DigitalHouseManager()
 
     digitalHouseManager.registrarProfessorTitular("Pedro" , "Henrique" , 123 , "Full Stack")
@@ -30,10 +26,11 @@ fun main(){
     digitalHouseManager.matricularAluno(3 , 20001)
     digitalHouseManager.matricularAluno(4 , 20002)
     digitalHouseManager.matricularAluno(5 , 20002)
+    
 
 
 
-
+   digitalHouseManager.consultarMatricula(1,DigitalHouseManager())
 
 
 

@@ -1,6 +1,6 @@
 open class Aluno(
-   val nome: String,
-     val sobrenome: String,
+    val nome: String,
+    val sobrenome: String,
     val codAluno: Int = -1
 ) {
 
@@ -26,4 +26,4 @@ open class Aluno(
 
 
 
-    }
+}

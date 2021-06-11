@@ -1,12 +1,12 @@
 class Curso(
     val nome: String,
-    val codCurso: Int = -1,
+    var codCurso: Int = -1,
     val qtMaximaAlunos: Int,
 
-) {
+    ) {
     lateinit var profTitular: ProfessorTitular
     lateinit var  profAdjunto: ProfessorAdjunto
-    var listaAlunosMatriculado = mutableListOf<Aluno>()
+     var listaAlunosMatriculado = mutableListOf<Aluno>()
 
 
 
