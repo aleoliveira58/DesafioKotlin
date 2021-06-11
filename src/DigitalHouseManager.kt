@@ -104,8 +104,7 @@ class DigitalHouseManager() {
 
     }
 
-
-    fun consultarMatricula(codigoAluno: Int ,adm: DigitalHouseManager) {
+    fun consultarMatricula(codigoAluno: Int, adm: DigitalHouseManager) {
         val matricula: Matricula? = adm.listaMatriculas.find { it.aluno?.codAluno == codigoAluno }
         val curso: Curso? = listaCurso.find { curso1: Curso -> curso1.codCurso != codigoAluno }
         if (matricula == null) {
@@ -116,7 +115,6 @@ class DigitalHouseManager() {
 
 
     }
-
 
 }
 

@@ -5,11 +5,8 @@ class Curso(
 
     ) {
     lateinit var profTitular: ProfessorTitular
-    lateinit var  profAdjunto: ProfessorAdjunto
-     var listaAlunosMatriculado = mutableListOf<Aluno>()
-
-
-
+    lateinit var profAdjunto: ProfessorAdjunto
+    var listaAlunosMatriculado = mutableListOf<Aluno>()
 
 
     override fun equals(other: Any?): Boolean {
@@ -40,7 +37,6 @@ class Curso(
 
     fun excluirAluno(umAluno: Aluno) {
         listaAlunosMatriculado.remove(umAluno)
-
 
 
     }

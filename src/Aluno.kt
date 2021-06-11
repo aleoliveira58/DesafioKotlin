@@ -23,7 +23,4 @@ open class Aluno(
     }
 
 
-
-
-
 }

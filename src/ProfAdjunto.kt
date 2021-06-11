@@ -1,9 +1,10 @@
 open class ProfessorAdjunto(
-     nome: String,
+    nome: String,
     sobrenome: String,
-    tempoCasa: Int  ,
+    tempoCasa: Int,
     codProfessor: Int,
-    val qtHorasMonitorada: Int): Professor(nome, sobrenome, tempoCasa, codProfessor){
+    val qtHorasMonitorada: Int
+) : Professor(nome, sobrenome, tempoCasa, codProfessor) {
 
     override fun toString(): String {
         return "O nome do professor adjunto é  $nome $sobrenome ,  código é  $codProfessor" +
@@ -11,4 +12,4 @@ open class ProfessorAdjunto(
     }
 
 
-    }
+}
